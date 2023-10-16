@@ -19,7 +19,10 @@ io.on("connection",(socket)=>{
 	socket.on("player2",(room)=>{
 		socket.to(room).emit("ready")
 	})
-	socket.on("action", (act, room)=>{
-		socket.to(room).emit("action" ,act)
+	socket.on("p1-action", (act, room)=>{
+		socket.to(room).emit("p1-action" ,act)
+	})
+	socket.on("p2-action", (act, room)=>{
+		socket.to(room).emit("p2-action" ,act)
 	})
 })
